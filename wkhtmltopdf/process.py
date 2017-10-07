@@ -70,7 +70,7 @@ def check_output(*popenargs, **kwargs):
 
     if retcode:
         if error_message and ignore_404:
-            if 'ContentNotFoundError' in error_message:
+            if 'ContentNotFoundError' in str(error_message):
                 return output
         cmd = kwargs.get("args")
         if cmd is None:
